@@ -1,0 +1,76 @@
+﻿@{
+    @model CustomerUI.Models.Customer
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+@using (Html.BeginForm("Submit", "Customer", FormMethod.Post))
+{
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.FirstName,"Enter First Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.FirstName)
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.LastName, "Enter Last Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.LastName)
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.PhoneNumber, "Enter Contact Number")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.PhoneNumber)
+            @Html.ValidationMessageFor(x => x.PhoneNumber)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.Address, "Please enter Address")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.Address)
+            @Html.ValidationMessageFor(x => x.Address)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.City, "Please enter City")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.City)
+            @Html.ValidationMessageFor(x => x.City)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.State, "Please enter State")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.State)
+            @Html.ValidationMessageFor(x => x.State)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.PostalCode, "Please enter postal code")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.PostalCode)
+            @Html.ValidationMessageFor(x => x.PostalCode)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.CustomerTypeId, "Please select a customer type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(x => x.CustomerTypeId,
+           Enum.GetValues(typeof(CustomerType)).Cast<CustomerType>().Select(c=>new SelectListItem{
+                Text=c.ToString(),
+                Value = ((int)c).ToString()
+            }
+             ))
+        </div>
+        <p>
+            <button type="submit">Create Customer</button>
+        </p>
+    </fieldset>
+}
+

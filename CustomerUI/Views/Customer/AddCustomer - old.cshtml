@@ -1,0 +1,86 @@
+﻿@*@{
+    @model CustomerUI.Models.Customer
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<html>
+
+<body>
+    <h3>Welcome Customer</h3>
+
+    <form method="post" action="SubmitCustomer">
+        <table>
+            <tr>
+                <td><label for="firstName">First name</label></td>
+                <td>
+                    <input type="text" id="firstName" name="FirstName"
+                           value="@Model.FirstName" />
+                    @Html.ValidationMessageFor(x => x.FirstName)
+                </td>
+                <td><label for="lastName">Last name</label></td>
+                <td>
+                    <input type="text" id="lastName" name="LastName"
+                           value="@Model.LastName" />
+                    @Html.ValidationMessageFor(x => x.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td>
+                    <input type="text" id="address" name="Address"
+                           @Model.Address />
+                    @Html.ValidationMessageFor(x => x.Address)
+                </td>
+            </tr>
+            <tr>
+                <td><label for="city">City</label></td>
+                <td>
+                    <input type="text" id="city" name="City"
+                           @Model.City />
+                    @Html.ValidationMessageFor(x => x.City)
+                </td>
+            </tr>
+            <tr>
+                <td><label for="state">State</label></td>
+                <td>
+                    <input type="text" id="state" name="State"
+                           @Model.State />
+                    @Html.ValidationMessageFor(x => x.State)
+                </td>
+            </tr>
+            <tr>
+                <td><label for="postalCode">Postal Code</label></td>
+                <td>
+                    <input type="text" id="postalCode" name="PostalCode"
+                           @Model.PostalCode />
+                    @Html.ValidationMessageFor(x => x.PostalCode)
+                </td>
+            </tr>
+            <tr>
+                <td><label for="phoneNumber">Phone Number</label></td>
+                <td>
+                    <input type="tel" id="phoneNumber" name="PhoneNumber"
+                           @Model.PhoneNumber />
+                    @Html.ValidationMessageFor(x => x.PhoneNumber)
+                </td>
+            </tr>
+            <tr>
+                <td><label for="customerType">Select Customer Type</label></td>
+                <td>
+                    <select id="customerType" name="CustomerType"
+                            @Model.CustomerType>
+                        <option id="lead" value="lead">Lead</option>
+                        <option id="customer" value="customer">Customer</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <button type="submit" id="btnSubmit">Submit Customer</button>
+    </form>
+
+
+
+</body>
+</html>*@

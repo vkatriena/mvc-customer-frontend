@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    
+*@
+@{
+  @model CustomerUI.Models.Customer
+}
+
+<html>
+<body>
+                <table>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(x => Model.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => Model.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => Model.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => Model.City)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => Model.State)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => Model.PostalCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => Model.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => Model.CustomerTypeId)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = Model.ID }) |
+                        </td>
+                    </tr>
+                </table>
+
+
+
+</body>
+</html>
